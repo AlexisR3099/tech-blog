@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech Blog</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css"> 
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>
+                    <a href="/">Alexis' Tech Blog</a>
+                </h1>
+                <nav>
+                    {{#if loggedIn}}
+                    <a href="/"><button class="btn btn-primary">Home</button></a>
+                    <a href="/dashboard"><button class="btn btn-primary">Dashboard</button></a>
+                    <a id="logout"><button class="btn btn-primary">Logout</button></a>
+                    {{else}}
+                    <a href="/login"><button class="btn btn-primary">Login</button></a>
+                    {{/if}}
+                </nav>
+            </header>
+            <main>
+                <div id="container">
+                    {{{ body }}}
+                </div>
+            </main>
+            <footer>
+                <div>
+                    <h2>&copy; Alexis' Tech Blog</h2>
+                    <p><a href="https://github.com/AlexisR3099"><b>Github: https://github.com/AlexisR3099</b></a></p>
+                </div>
+            </footer>
+        </div>
+
+        {{#if loggedIn}}
+        <script src="/js/logout.js"></script>
+        {{/if}}
+    </body>
+</html>
